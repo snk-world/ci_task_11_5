@@ -1,8 +1,8 @@
+stage('Checkout external proj') {
+        steps {
+            git branch: 'main',
+                url: 'git@github.com:snk-world/ci_task_11_5.git'
 
-def var="sql"
-
-node ('clear agent') {
-	stage (' git checkout ' ) {
-		print ("123")
-	}
+            sh "ls -lat"
+        }
 }
