@@ -1,12 +1,11 @@
-stage('Checkout external proj') {
-        steps {
-        	 checkout([
-      			  $class: 'GitSCM', 
-		          branches: [[name: '*/main']], 
-		          doGenerateSubmoduleConfigurations: false, 
-  		          extensions: [[$class: 'CleanCheckout']], 
- 		          submoduleCfg: [], 
-        		  userRemoteConfigs: [[credentialsId: '1', url: 'git@github.com:snk-world/ci_task_11_5.git']]
-		    ])
+// Сценарный конвейер;
+node('worker_node1') {
+	stage('Source') {// Получение кода;
+		// Получаем код из нашего Git-репозитория;
+		git 'git@github.com:snk-world/ci_task_11_5.git’
+	}
+	stage('Compile') {// Компиляция и выполнение модульного тестирования;
+		// Запуск Gradle для выполнения компиляции и модульного тестирования;
+		sh "echo 123"
 	}
 }
