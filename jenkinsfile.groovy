@@ -1,5 +1,5 @@
 // Сценарный конвейер;
-node('master') {
+node('Built-In Node') {
 	stage('Source') {// Получение кода;
 		// Получаем код из нашего Git-репозитория;
 		git branch: 'main', url: 'https://github.com/snk-world/ci_task_11_5.git'
